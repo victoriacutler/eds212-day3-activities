@@ -1,0 +1,91 @@
+---
+title: "Conditionals and Loops"
+author: "Victoria Cutler"
+date: "2022-08-10"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+```
+
+Task 1
+
+```{r}
+pm2_5 <- 160
+
+if (pm2_5 < 100) {
+  print("Low to moderate risk")
+} else if (pm2_5 >= 100 && pm2_5 < 150) {
+  print("Unhealthy for sensitive groups")
+} else { 
+  print("Health risk present")
+}
+```
+
+Task 2
+
+```{r}
+species <- "blue butt"
+
+str_detect(species,"blue whale")
+
+if (str_detect(species,"blue whale") == TRUE) {
+  print("You found a whale!")
+}
+```
+
+Task 3
+
+```{r}
+max_airtemp_c <- vector(mode = "numeric", length = 1)
+max_airtemp_c <- 28
+max_airtemp_c
+
+if (max_airtemp_c > 27) {
+  print("Temperature too high")
+} else {
+  print("Temperature OK")
+}
+```
+
+Task 4
+
+```{r}
+base_burrito <- 6.50
+main_ingredient <- "steak"
+
+if (main_ingredient == "veggie") {
+  print(base_burrito)
+} else if (main_ingredient == "chicken") {
+  print(base_burrito + 3)
+} else if (main_ingredient == "steak") {
+  print(base_burrito + 3.25)
+}
+```
+
+Task 5
+
+```{r}
+fish <- c(8,10,12,23)
+species <- c("goldfish", "tetras", "guppies", "mollies")
+
+fish_proportions <- vector(mode = "numeric", length = length(fish))
+
+for (i in seq_along(fish)) {
+  fish_proportions[i] <- fish[i] / sum(fish)
+}
+```
+
+Task 6
+
+```{r}
+
+for (i in seq_along(month.name)) {
+  print(paste(month.name, "is month", i))
+}
+```
+
+##Part 2
